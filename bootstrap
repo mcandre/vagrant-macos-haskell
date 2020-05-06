@@ -1,4 +1,8 @@
 #!/bin/sh
+set -eu
+IFS="$(printf '%b_' '\n\t ')"
+IFS="${IFS%_}"
+
 brew install cabal-install &&
     brew uninstall --ignore-dependencies ghc &&
     brew install ghc@8.2 &&
